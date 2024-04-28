@@ -1,0 +1,48 @@
+body {
+  height: 100vh;
+}
+
+.main {
+  height: 85vh;
+  display: flex;
+}
+
+.main-stack {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.faculty {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.teacher {
+  font-size: 1em;
+  font-weight: normal;
+  list-style-type: none;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.faculty-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.teacher-list {
+  padding-left: 10px;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
