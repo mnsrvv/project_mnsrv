@@ -8,7 +8,6 @@ module.exports = {
       'Teachers',
       [
         {
-          id: 1,
           name: 'Высицкий Анатолий Федорович',
           email: 'Vafmain@mail.ru',
           password: await bcrypt.hash('123', 10),
@@ -17,7 +16,6 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          id: 2,
           name: 'Муравьев Евгений Александрович',
           email: 'muravyev.evgeny@yandex.ru',
           password: await bcrypt.hash('123', 10),

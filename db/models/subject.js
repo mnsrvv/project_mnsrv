@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.hasMany(models.SubjectTeacher, { foreignKey: 'subjectId' });
+      this.hasMany(models.File, { foreignKey: 'subjectId' });
     }
   }
   Subject.init(

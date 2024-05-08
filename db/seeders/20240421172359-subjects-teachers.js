@@ -7,14 +7,12 @@ module.exports = {
       'SubjectTeachers',
       [
         {
-          id: 1,
           subjectId: 1,
           teacherId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          id: 2,
           subjectId: 2,
           teacherId: 2,
           createdAt: new Date(),

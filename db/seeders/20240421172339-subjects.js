@@ -7,13 +7,11 @@ module.exports = {
       'Subjects',
       [
         {
-          id: 1,
           name: 'Информатика',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          id: 2,
           name: 'Программирование',
           createdAt: new Date(),
           updatedAt: new Date(),

@@ -8,7 +8,6 @@ module.exports = {
       'Admins',
       [
         {
-          id: 1,
           email: 'admin@admin',
           password: await bcrypt.hash('admin', 10),
           createdAt: new Date(),

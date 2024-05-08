@@ -9,6 +9,12 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      name: {
+        type: Sequelize.STRING,
+      },
+      description: {
+        type: Sequelize.STRING,
+      },
       path: {
         type: Sequelize.STRING,
       },
@@ -17,6 +23,15 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'Teachers',
+          key: 'id',
+        },
+        onDelete: 'SET NULL',
+        onUpdate: 'CASCADE',
+      },
+      subjectId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Subjects',
           key: 'id',
         },
         onDelete: 'SET NULL',

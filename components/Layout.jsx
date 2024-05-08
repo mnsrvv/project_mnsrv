@@ -6,7 +6,7 @@ const Navigation = require('./ui/Navigation');
 // стили
 import Container from 'react-bootstrap/Container';
 
-module.exports = function Layout({ title, children }) {
+module.exports = function Layout({ title, children, user }) {
   return (
     <>
       <html lang='en'>
@@ -28,10 +28,12 @@ module.exports = function Layout({ title, children }) {
           <link rel='stylesheet' href='/reset.css' />
           <link rel='stylesheet' href='/normalize.css' />
           <link rel='stylesheet' href='/style.css' />
+          <script src='/scripts/auth.js' defer></script>
+          <script src='/scripts/select.js' defer></script>
           <title>{title}</title>
         </head>
         <body>
-          <Navigation/>
+          <Navigation user={user}/>
           <Container className='main'>{children}</Container>
         </body>
       </html>

@@ -7,13 +7,11 @@ module.exports = {
       'Faculties',
       [
         {
-          id: 1,
           name: 'Факультет цифровых промышленных технологий',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          id: 2,
           name: 'Факультет морского приборостроения',
           createdAt: new Date(),
           updatedAt: new Date(),

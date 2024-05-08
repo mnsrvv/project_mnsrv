@@ -9,12 +9,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.Teacher, { foreignKey: 'teacherId' });
+      this.belongsTo(models.Subject, { foreignKey: 'subjectId' });
     }
   }
   File.init(
     {
+      name: DataTypes.STRING,
+      description: DataTypes.STRING,
       path: DataTypes.STRING,
       teacherId: DataTypes.INTEGER,
+      subjectId: DataTypes.INTEGER,
     },
     {
       sequelize,
