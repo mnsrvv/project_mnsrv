@@ -5,7 +5,7 @@ const generateTokens = require('../utils/generateTokens');
 function verifyAccessToken(req, res, next) {
   try {
     const { access } = req.cookies;
-    const { user } = jwt.verify(access, 'ACCESS');
+    const { user } = jwt.verify(access, process.env.ACCESS);
 
     res.locals.user = user;
     next();
@@ -17,7 +17,7 @@ function verifyAccessToken(req, res, next) {
 function verifyRefreshToken(req, res, next) {
   try {
     const { refresh } = req.cookies;
-    const { user } = jwt.verify(refresh, 'REFRESH');
+    const { user } = jwt.verify(refresh, process.env.REFRESH);
     const { accessToken, refreshToken } = generateTokens({
       user: {
         id: user.id,

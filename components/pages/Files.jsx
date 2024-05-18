@@ -10,7 +10,7 @@ module.exports = function Files({ files, user }) {
         {files[0] ? (
           files.map((file) => (
             <li key={file.id} className='file'>
-              <a href={file.path} download>
+              <a href={`/file/${file.id}`}>
                 {file.name} | {file.Teacher.name}
               </a>
             </li>

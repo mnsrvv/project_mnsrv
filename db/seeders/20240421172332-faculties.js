@@ -16,6 +16,26 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          name: 'Факультет кораблестроения и океанотехники',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Факультет корабельной энергетики и автоматики',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Инженерно-экономический факультет',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Факультет естественнонаучного и гуманитарного образования',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );

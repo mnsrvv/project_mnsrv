@@ -13,7 +13,7 @@ module.exports = function Authors({ faculties, user }) {
             <ul className='teacher-list'>
               {faculty.Teachers.map((teacher) => (
                 <li key={teacher.id} className='teacher'>
-                  • {teacher.name}
+                  • <a href={`/search/authors/${teacher.id}`}>{teacher.name}</a>
                 </li>
               ))}
             </ul>

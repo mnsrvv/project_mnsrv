@@ -76,3 +76,20 @@ body {
   font-size: 1.5rem;
   margin-top: 0.5rem;
 }
+
+.card {
+  max-width: 75%;
+}
+
+.add-teacher {
+  width: 20rem;
+}
+
+.admin-teachers-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buttons {
+  display: flex;
+}

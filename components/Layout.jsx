@@ -30,10 +30,11 @@ module.exports = function Layout({ title, children, user }) {
           <link rel='stylesheet' href='/style.css' />
           <script src='/scripts/auth.js' defer></script>
           <script src='/scripts/select.js' defer></script>
+          <script src='/scripts/files.js' defer></script>
           <title>{title}</title>
         </head>
         <body>
-          <Navigation user={user}/>
+          <Navigation user={user} />
           <Container className='main'>{children}</Container>
         </body>
       </html>

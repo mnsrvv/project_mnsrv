@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Op } = require('sequelize');
+const { Op, where } = require('sequelize');
 
 // компоненты
 const Authors = require('../../components/pages/Authors');
@@ -57,6 +57,23 @@ router.get('/authors', async (req, res) => {
       },
     });
     const html = res.renderComponent(Authors, { faculties });
+
+    res.send(html);
+  } catch (error) {
+    res.json({ message: 'error', error });
+  }
+});
+
+router.get('/authors/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const files = await File.findAll({
+      where: { teacherId: id },
+      include: {
+        model: Teacher,
+      },
+    });
+    const html = res.renderComponent(Files, { files });
 
     res.send(html);
   } catch (error) {

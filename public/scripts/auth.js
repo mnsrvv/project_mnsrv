@@ -28,7 +28,7 @@ if (reg) {
 
       if (data.message === 'success') {
         alert('Регистрация прошла успешно!');
-        window.location.assign('/sign-in');
+        window.location.assign('/auth/sign-in');
       } else if (data.message === 'error') {
         alert('Пользователь уже существует!');
       } else if (data.message === 'trim') {
