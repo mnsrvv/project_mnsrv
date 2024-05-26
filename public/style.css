@@ -1,5 +1,8 @@
 body {
   height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: #ecf0f1;
+  color: #2c3e50;
 }
 
 .main {
@@ -9,15 +12,39 @@ body {
 }
 
 .main-stack {
+  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  font-size: 1.5em;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.file-search {
+  width: 100%;
+  max-width: 400px;
+}
+
+.file-search .form-control {
+  font-size: 1rem;
+}
+
+.file-search .btn-primary {
+  font-size: 1rem;
+}
+
+.file-search .form-label {
+  font-size: 0.9rem;
 }
 
 .form-auth,
 .file-search {
-  width: 15vw;
+  width: 300px;
   display: flex;
   flex-direction: column;
 }
@@ -26,37 +53,106 @@ body {
   font-size: 1.5rem;
 }
 
-.faculty {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.teacher {
-  font-size: 1.5rem;
-  font-weight: normal;
-  list-style-type: none;
-  padding-left: 1rem;
-  margin-top: 0.5rem;
-}
-
-.faculty-list {
-  list-style-type: none;
-}
-
-.teacher-list {
-  padding-left: 1rem;
-  margin: 0;
-}
-
-.hidden {
-  display: none;
-}
-
 .profile {
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  margin: 0 auto;
+}
+
+.faculty {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #2980b9;
+  padding-bottom: 0.5rem;
+}
+
+.teacher {
+  font-size: 1.25rem;
+  font-weight: normal;
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  color: #34495e;
+}
+
+.teacher a {
+  text-decoration: none;
+  color: #2980b9;
+  transition: color 0.3s ease;
+}
+
+.teacher a:hover {
+  color: #e74c3c;
+}
+
+.faculty-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.teacher-list {
+  padding-left: 1.5rem;
+  margin: 0;
+  margin-top: 0.5rem;
+  border-left: 2px solid #2980b9;
+}
+
+.sort-select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.files-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+  overflow-y: auto;
+  max-height: 800px;
+}
+
+.file {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.file a {
+  text-decoration: none;
+  color: #2980b9;
+  transition: color 0.3s ease;
+}
+
+.file a:hover {
+  color: #e74c3c;
+}
+
+.file:hover {
+  background-color: #f1f1f1;
+}
+
+.no-files {
+  font-size: 1.25rem;
+  color: #e74c3c;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
 }
 
 .user-info {
@@ -70,11 +166,7 @@ body {
 .user-files {
   display: flex;
   flex-direction: column;
-}
-
-.file {
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
+  overflow-y: auto;
 }
 
 .card {
@@ -87,9 +179,62 @@ body {
 
 .admin-teachers-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 400px;
 }
 
 .buttons {
   display: flex;
+}
+
+.card-teacher {
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .main-stack {
+    padding: 1.5rem;
+  }
+  .profile {
+    padding: 1.5rem;
+  }
+  .brand {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-stack {
+    padding: 1.5rem;
+  }
+  .profile {
+    padding: 1rem;
+  }
+}
+
+.files-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+  overflow-y: auto;
+  max-height: 800px;
+}
+
+@media (max-width: 768px) {
+  .files-list {
+    max-height: 600px;
+  }
+}
+
+@media (max-width: 576px) {
+  .files-list {
+    max-height: 400px;
+  }
 }

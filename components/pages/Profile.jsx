@@ -23,6 +23,7 @@ module.exports = function Profile({ user, files, subjects }) {
               className='file-upload'
               encType='multipart/form-data'
             >
+              <p className='mt-2 mb-2'>Добавить материал</p>
               <Form.Group className='mb-3'>
                 <Form.Label>Название</Form.Label>
                 <Form.Control

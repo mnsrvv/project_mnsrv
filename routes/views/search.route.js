@@ -96,4 +96,39 @@ router.get('/files', async (req, res) => {
   }
 });
 
+router.get('/sortedFiles', async (req, res) => {
+  try {
+    const { sort, sortOrder } = req.query;
+
+    // Определение порядка сортировки
+    let order;
+    switch (sort) {
+      case '1':
+        order = ['name', sortOrder === 'ascending' ? 'ASC' : 'DESC'];
+        break;
+      case '2':
+        order = ['Teacher', 'name', sortOrder === 'ascending' ? 'ASC' : 'DESC'];
+        break;
+      case '3':
+        order = ['createdAt', sortOrder === 'ascending' ? 'ASC' : 'DESC'];
+        break;
+      default:
+        order = [];
+    }
+
+    const files = await File.findAll({
+      include: {
+        model: Teacher,
+      },
+      order: [order],
+    });
+
+    const html = res.renderComponent(Files, { files });
+
+    res.send(html);
+  } catch (error) {
+    res.json({ message: 'error', error });
+  }
+});
+
 module.exports = router;

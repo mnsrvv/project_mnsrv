@@ -30,3 +30,25 @@ if (select) {
     }
   });
 }
+
+const sortSelect = document.getElementById('sortSelect');
+const sortOrder = document.getElementById('sortOrder');
+const ascendingRadio = document.getElementById('ascending');
+const descendingRadio = document.getElementById('descending');
+
+if (sortSelect && sortOrder && ascendingRadio && descendingRadio) {
+  sortSelect.addEventListener('change', () => {
+    if (
+      sortSelect.value === '1' ||
+      sortSelect.value === '2' ||
+      sortSelect.value === '3'
+    ) {
+      sortOrder.style.display = 'block';
+    } else {
+      sortOrder.style.display = 'none';
+    }
+
+    ascendingRadio.checked = false;
+    descendingRadio.checked = false;
+  });
+}

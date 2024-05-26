@@ -1,4 +1,5 @@
 import React from 'react';
+import { format } from 'date-fns';
 
 // компоненты
 const Layout = require('../Layout');
@@ -9,6 +10,15 @@ import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
 
 module.exports = function FileView({ user, file }) {
+  const formattedCreatedAt = format(
+    new Date(file.createdAt),
+    'dd.MM.yyyy HH:mm'
+  );
+  const formattedUpdatedAt = format(
+    new Date(file.updatedAt),
+    'dd.MM.yyyy HH:mm'
+  );
+
   return (
     <Layout title={'Файл'} user={user}>
       <Stack gap={2} className='col-md-5 mx-auto main-stack' data-id={file.id}>
@@ -16,7 +26,14 @@ module.exports = function FileView({ user, file }) {
         <Card body className='card mb-2'>
           {file.description}
         </Card>
-        <h2 className='mb-5'>Автор: {file.Teacher.name}</h2>
+        <h2 className='mb-2'>Автор: {file.Teacher.name}</h2>
+        <>
+          {formattedCreatedAt === formattedUpdatedAt ? (
+            <h2 className='mb-5'>Дата публикации: {formattedCreatedAt}</h2>
+          ) : (
+            <h2 className='mb-5'>Обновлено: {formattedUpdatedAt}</h2>
+          )}
+        </>
         <div>
           {user?.role === 'admin' ||
           (user?.role === 'teacher' && user?.id === file.teacherId) ? (
